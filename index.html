@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shuumatsu no Valkyrie-download</title>
+  <meta name="description" content="RPLGames adalah portal RPG bergaya anime terbaik. Unduh sekarang dan jelajahi dunia sihir dan petualangan!">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <style>
+ @keyframes gamingBlink {
+  0% {
+    color: #00f7ff; /* Aqua */
+    text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+  }
+  25% {
+    color: #0055ff; /* Biru Tua */
+    text-shadow: 0 0 10px #0055ff, 0 0 20px #0055ff;
+  }
+  50% {
+    color: #bb00ff; /* Ungu */
+    text-shadow: 0 0 10px #bb00ff, 0 0 20px #bb00ff;
+  }
+  75% {
+    color: #00ff99; /* Hijau Terang */
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+  }
+  100% {
+    color: #ff00c8; /* Magenta */
+    text-shadow: 0 0 10px #ff00c8, 0 0 20px #ff00c8;
+  }
+}
+
+h1 {
+  animation: gamingBlink 2.5s infinite ease-in-out;
+  font-weight: bold;
+  font-size: 3rem;
+  -webkit-text-stroke: 0.5px white; /* Garis pinggir */
+  text-stroke: 0.5px white;         /* Untuk browser lain */
+}
+}
+
+h1 {
+  animation: gamingBlink 2.5s infinite ease-in-out;
+}
+}
+
+h1 {
+  animation: blink 1.5s infinite alternate;
+}
+  
+    * {
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: black url('https://wallpapercave.com/wp/wp7101454.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    #tsparticles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .scroll-indicator {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #00f7ff, #ff00c8);
+      width: 0%;
+      z-index: 999;
+      transition: width 0.25s;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+      display: flex;
+      gap: 20px;
+      justify-content: flex-start;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+    }
+
+    .nav a {
+      font-size: 0.85rem;
+      color: #00f7ff;
+      text-decoration: none;
+      font-family: 'Press Start 2P', cursive;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #ff00c8;
+      transition: width 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #ff00c8;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .container {
+      position: relative;
+      z-index: 3;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      padding-top: 120px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #ff00c8;
+      margin-bottom: 30px;
+      font-family: 'Press Start 2P', cursive;
+      text-shadow: 0 0 15px #ff00c8;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    .btn {
+      background: rgba(0, 0, 0, 0.6);
+      color: #00f7ff;
+      border: 3px solid #00f7ff;
+      padding: 18px 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 10px;
+      font-family: 'Orbitron';
+      transition: 0.3s;
+      box-shadow: 0 0 20px #00f7ff;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #00f7ff;
+      color: #0a0a1a;
+      box-shadow: 0 0 40px #00f7ff;
+      transform: scale(1.05);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .feature-box {
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid #ff00c8;
+      border-radius: 15px;
+      padding: 30px 20px;
+      box-shadow: 0 0 20px #ff00c8;
+      transition: 0.3s;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 35px #ff00c8;
+    }
+
+    .feature-box h3 {
+      font-size: 1.4rem;
+      color: #00f7ff;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #00f7ff;
+    }
+
+    .feature-box p {
+      font-size: 1rem;
+      color: #ddd;
+    }
+
+    section {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #ff6ce3;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    #featured {
+      background: rgba(10, 10, 20, 0.9);
+      padding: 100px 20px;
+    }
+
+    .featured-box {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.7);
+      border: 3px solid #00f7ff;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      box-shadow: 0 0 30px #00f7ff;
+      transition: 0.5s;
+    }
+
+    .featured-box:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 50px #00f7ff;
+    }
+
+    .featured-img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      object-fit: cover;
+      flex: 1 1 400px;
+    }
+
+    .featured-content {
+      flex: 1 1 400px;
+      padding: 30px;
+      text-align: left;
+    }
+
+    .featured-content h3 {
+      font-size: 2rem;
+      color: #ff00c8;
+      margin-bottom: 20px;
+    }
+
+    .featured-content p {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.9);
+      color: #888;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      margin-top: 0px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 1.6rem; }
+      .btn { font-size: 1rem; padding: 12px 24px; }
+      .nav a { font-size: 0.6rem; }
+      .featured-content { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="scroll-indicator" id="scroll-indicator"></div>
+
+<canvas id="bg"></canvas>
+<div id="tsparticles"></div>
+
+<div class="nav">
+  <a href="#signin">Sign In</a>
+  <a href="#home">Home</a>
+  <a href="#games">Games</a>
+  <a href="#genres">Genres</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#blog">Blog</a>
+  <a href="#fastdownload">Fast Download</a>
+</div>
+
+<div class="container" id="home" data-aos="fade-up">
+  <h1>The Valkyrie Einherjar: Dawn of Final Ragnarok</h1>
+  <div class="buttons">
+    <a class="btn" href="#">📱 Android</a>
+    <a class="btn" href="#">💻 Windows</a>
+    <a class="btn" href="#">🍎 iOS</a>
+  </div>
+
+  <div class="features" data-aos="zoom-in">
+    <div class="feature-box"><h3>Mode PVE & PVP</h3><p>Bertarung melawan monster atau tantang pemain lain di arena seru!</p></div>
+    <div class="feature-box"><h3>Dunia Open World</h3><p>Eksplorasi kerajaan sihir, hutan gelap, dan dunia baru tanpa batas!</p></div>
+    <div class="feature-box"><h3>Sistem Job RPG</h3><p>Pilih class: Warrior, Mage, Assassin dan tingkatkan skill unikmu!</p></div>
+    <div class="feature-box"><h3>Kustomisasi Karakter</h3><p>Ubah tampilan hero-mu sesuka hati, dari armor sampai ekspresi wajah!</p></div>
+    <div class="feature-box"><h3>Crafting & Trading</h3><p>Kumpulkan bahan, buat senjata legendaris, dan jual untuk keuntungan!</p></div>
+    <div class="feature-box"><h3>Event Harian</h3><p>Ikuti event spesial, menangkan hadiah langka, dan bonus login harian!</p></div>
+  </div>
+</div>
+
+<section id="games" data-aos="fade-up">
+  <h2>🎮 Games</h2>
+  <p>Mulai petualangan di berbagai dunia dengan karakter bergaya anime dan gameplay RPG tak tertandingi.</p>
+</section>
+
+<section id="genres" data-aos="fade-up">
+  <h2>🎭 Genres</h2>
+  <p>Action RPG, Strategy, Turn-Based, dan MMORPG semuanya tersedia untuk para gamer sejati.</p>
+</section>
+
+<section id="reviews" data-aos="fade-up">
+  <h2>🌟 Reviews</h2>
+  <p>“Grafik anime luar biasa dan sistem pertarungan yang adiktif!” – Komunitas gamer global.</p>
+</section>
+
+<section id="blog" data-aos="fade-up">
+  <h2>📰 Blog</h2>
+  <p>Ikuti berita, event, dan update terbaru langsung dari developer RPLGames.</p>
+</section>
+
+<section id="signin" data-aos="fade-up">
+  <h2>🔐 Sign In</h2>
+  <p>Masuk dan akses fitur eksklusif seperti skin langka, karakter spesial, dan penyimpanan cloud!</p>
+</section>
+
+<section id="fastdownload" data-aos="fade-up">
+  <h2>⚡ Fast Download</h2>
+  <p>Download aplikasi RPLGames sekarang juga dengan kecepatan tinggi dan tanpa gangguan!</p>
+</section>
+
+<section id="featured" data-aos="zoom-in-up">
+  <h2>🔥 Featured Game</h2>
+  <div class="featured-box">
+    <img src="https://i.ibb.co/ZYW3VTp/best-anime-game.jpg" alt="Featured Game" class="featured-img">
+    <div class="featured-content">
+      <h3>ChronoBlade Saga</h3>
+      <p>Game RPG anime epik dengan grafis generasi terbaru, alur cerita mendalam, dan sistem pertarungan real-time yang dinamis!</p>
+      <a href="#" class="btn">Download Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 RPLGames. Powered by Gamers, For Gamers.</p>
+</footer>
+
+<script defer>
+  const canvas = document.getElementById('bg');
+  const ctx = canvas.getContext('2d');
+  let w = canvas.width = window.innerWidth;
+  let h = canvas.height = window.innerHeight;
+
+  const stars = Array.from({ length: 300 }, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 1.5 + 0.5,
+    s: Math.random() * 0.8 + 0.3,
+    c: `hsl(${Math.random() * 360}, 100%, 70%)`
+  }));
+
+  function drawStars() {
+    ctx.clearRect(0, 0, w, h);
+    stars.forEach(star => {
+      ctx.beginPath();
+      ctx.fillStyle = star.c;
+      ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+      ctx.fill();
+      star.y += star.s;
+      if (star.y > h) {
+        star.y = 0;
+        star.x = Math.random() * w;
+      }
+    });
+    requestAnimationFrame(drawStars);
+  }
+
+  drawStars();
+  window.addEventListener('resize', () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  });
+
+  const scrollIndicator = document.getElementById('scroll-indicator');
+  window.addEventListener('scroll', () => {
+    const maxHeight = document.body.scrollHeight - window.innerHeight;
+    const percentage = (window.scrollY / maxHeight) * 100;
+    scrollIndicator.style.width = `${percentage}%`;
+  });
+
+  tsParticles.load("tsparticles", {
+    fullScreen: { enable: false },
+    background: { color: { value: "transparent" } },
+    particles: {
+      number: { value: 100 },
+      color: { value: ["#00f7ff", "#ff00c8"] },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: 3 },
+      move: { enable: true, speed: 1, direction: "none", outModes: "bounce" },
+      links: {
+        enable: true,
+        color: "#ffffff",
+        distance: 120,
+        opacity: 0.4,
+        width: 1,
+      },
+    },
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: "repulse" },
+        resize: true,
+      },
+      modes: {
+        repulse: { distance: 100 },
+      },
+    },
+  });
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+</body>
+</html>
